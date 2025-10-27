@@ -16,6 +16,8 @@ namespace HotelApp_Asig5
         public DirectionForm()
         {
             InitializeComponent();
+            this.AcceptButton = directionsButton;
+            this.CancelButton = exitButton;
         }
 
         private void directionsButton_Click(object sender, EventArgs e)

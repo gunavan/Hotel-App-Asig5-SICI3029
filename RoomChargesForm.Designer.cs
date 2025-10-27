@@ -62,6 +62,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.clientIdMTextBox = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.errorStrip.SuspendLayout();
             this.SuspendLayout();
@@ -104,7 +106,7 @@
             this.exitButton.Margin = new System.Windows.Forms.Padding(4);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(287, 81);
-            this.exitButton.TabIndex = 42;
+            this.exitButton.TabIndex = 8;
             this.exitButton.Text = "E&xit";
             this.exitButton.UseVisualStyleBackColor = false;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
@@ -117,7 +119,7 @@
             this.clearButton.Margin = new System.Windows.Forms.Padding(4);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(287, 81);
-            this.clearButton.TabIndex = 41;
+            this.clearButton.TabIndex = 7;
             this.clearButton.Text = "Clear";
             this.clearButton.UseVisualStyleBackColor = false;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
@@ -130,7 +132,7 @@
             this.calculateButton.Margin = new System.Windows.Forms.Padding(4);
             this.calculateButton.Name = "calculateButton";
             this.calculateButton.Size = new System.Drawing.Size(287, 81);
-            this.calculateButton.TabIndex = 40;
+            this.calculateButton.TabIndex = 6;
             this.calculateButton.Text = "&Calculate";
             this.calculateButton.UseVisualStyleBackColor = false;
             this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
@@ -144,7 +146,7 @@
             this.miscTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.miscTextBox.Name = "miscTextBox";
             this.miscTextBox.Size = new System.Drawing.Size(195, 27);
-            this.miscTextBox.TabIndex = 36;
+            this.miscTextBox.TabIndex = 5;
             this.miscTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // telephoneTextBox
@@ -156,7 +158,7 @@
             this.telephoneTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.telephoneTextBox.Name = "telephoneTextBox";
             this.telephoneTextBox.Size = new System.Drawing.Size(195, 27);
-            this.telephoneTextBox.TabIndex = 35;
+            this.telephoneTextBox.TabIndex = 4;
             this.telephoneTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // nightlyChargeTextBox
@@ -168,7 +170,7 @@
             this.nightlyChargeTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nightlyChargeTextBox.Name = "nightlyChargeTextBox";
             this.nightlyChargeTextBox.Size = new System.Drawing.Size(195, 27);
-            this.nightlyChargeTextBox.TabIndex = 15;
+            this.nightlyChargeTextBox.TabIndex = 2;
             this.nightlyChargeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // roomServiceTextBox
@@ -180,7 +182,7 @@
             this.roomServiceTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.roomServiceTextBox.Name = "roomServiceTextBox";
             this.roomServiceTextBox.Size = new System.Drawing.Size(195, 27);
-            this.roomServiceTextBox.TabIndex = 30;
+            this.roomServiceTextBox.TabIndex = 3;
             this.roomServiceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // nightsTextBox
@@ -192,7 +194,7 @@
             this.nightsTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nightsTextBox.Name = "nightsTextBox";
             this.nightsTextBox.Size = new System.Drawing.Size(195, 27);
-            this.nightsTextBox.TabIndex = 13;
+            this.nightsTextBox.TabIndex = 1;
             this.nightsTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label17
@@ -461,12 +463,35 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Room Information";
             // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(157, 70);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(136, 36);
+            this.label11.TabIndex = 34;
+            this.label11.Text = "Client ID:";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // clientIdMTextBox
+            // 
+            this.clientIdMTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.clientIdMTextBox.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.clientIdMTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.clientIdMTextBox.Location = new System.Drawing.Point(300, 75);
+            this.clientIdMTextBox.Mask = ">LL-0000";
+            this.clientIdMTextBox.Name = "clientIdMTextBox";
+            this.clientIdMTextBox.Size = new System.Drawing.Size(193, 27);
+            this.clientIdMTextBox.TabIndex = 0;
+            // 
             // RoomChargesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(988, 758);
+            this.Controls.Add(this.clientIdMTextBox);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.errorStrip);
             this.Controls.Add(this.exitButton);
@@ -491,6 +516,7 @@
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label8);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -548,5 +574,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.MaskedTextBox clientIdMTextBox;
     }
 }

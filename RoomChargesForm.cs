@@ -17,6 +17,8 @@ namespace HotelApp_Asig5
             InitializeComponent();
             string date = DateTime.Now.ToString("dd/MM/yyyy");
             string hour = DateTime.Now.ToShortTimeString().ToString();
+            this.AcceptButton = calculateButton;
+            this.CancelButton = exitButton;
 
             dateLabel.Text = date;
             timeLabel.Text = hour;
@@ -31,7 +33,11 @@ namespace HotelApp_Asig5
             decimal TAX = 0.1105m;
             bool notEmpty = true;
             // checks if its a number, then if textbox is empty
-            if (!int.TryParse(nightsTextBox.Text, out nights)) {
+            if (!clientIdMTextBox.MaskFull) {
+                if (clientIdMTextBox.Text != "") { roomChargesErrorLabel.Text = "Client ID TextBox must be fully filled!"; }
+                clientIdMTextBox.Focus();
+                notEmpty = false; }
+            else if (!int.TryParse(nightsTextBox.Text, out nights)) {
                 if (nightsTextBox.Text != "") { roomChargesErrorLabel.Text = "Nights TextBox must contain a number!"; }
                 else { roomChargesErrorLabel.Text = "Nights TextBox cannot be empty!"; }
                 nightsTextBox.Focus();
@@ -90,15 +96,29 @@ namespace HotelApp_Asig5
 
                 total = taxTotal + subtotal;
                 // output
-                roomChargesLabel.Text = roomCharge.ToString("C");
-                additionalChargesLabel.Text = additionalCharges.ToString("C");
-                subtotalLabel.Text = subtotal.ToString("C");
-                totalLabel.Text = total.ToString("C");
-                taxLabel.Text = taxTotal.ToString("C");
-                totalLabel.Text = total.ToString("C"); }
+                Output(); }
         }
 
         private void clearButton_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Output()
+        {
+            roomChargesLabel.Text = roomCharge.ToString("C");
+            additionalChargesLabel.Text = additionalCharges.ToString("C");
+            subtotalLabel.Text = subtotal.ToString("C");
+            totalLabel.Text = total.ToString("C");
+            taxLabel.Text = taxTotal.ToString("C");
+            totalLabel.Text = total.ToString("C");
+        }
+
+        private void Clear()
         {
             // labels
             roomChargesLabel.Text = "";
@@ -108,19 +128,16 @@ namespace HotelApp_Asig5
             taxLabel.Text = "";
             totalLabel.Text = "";
             // text boxes
+            clientIdMTextBox.Text = "";
             nightsTextBox.Text = "";
             nightlyChargeTextBox.Text = "";
             roomServiceTextBox.Text = "";
             telephoneTextBox.Text = "";
             miscTextBox.Text = "";
             // focus
-            nightsTextBox.Focus();
+            clientIdMTextBox.Focus();
             // errorbar
             roomChargesErrorLabel.Text = "";
-        }
-        private void exitButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

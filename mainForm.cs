@@ -9,6 +9,7 @@ namespace HotelApp_Asig5
         public MainForm()
         {
             InitializeComponent();
+            this.CancelButton = exitButton;
         }
 
         private void directionsFormButton_Click(object sender, EventArgs e)
