@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.IO;
+using Excel = Microsoft.Office.Interop.Excel;
 using System.CodeDom;
 // GUNAVAN D HUAMANI MELGAR | 802-22-2972
 namespace HotelApp_Asig5
@@ -102,15 +103,6 @@ namespace HotelApp_Asig5
                 SaveTransaction(); }
         }
 
-        private void clearButton_Click(object sender, EventArgs e)
-        {
-            Clear();
-        }
-        private void exitButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void Output()
         {
             roomChargesLabel.Text = roomCharge.ToString("C");
@@ -186,6 +178,36 @@ namespace HotelApp_Asig5
                 readFile.Close();
                 return false; }
             catch (Exception ex) { MessageBox.Show(ex.Message); return true; }
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void fileOpenMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialog.InitialDirectory = @"C:\record";
+            DialogResult result = openFileDialog.ShowDialog();
+
+            if (result == DialogResult.OK) {
+                Excel.Application excelApp = new Excel.Application();
+                // Open the text file with parsing options (comma-delimited example)
+                excelApp.Workbooks.OpenText(Filename: openFileDialog.FileName,
+                DataType: Excel.XlTextParsingType.xlDelimited,
+                Comma: true);
+                // Make Excel visible
+                excelApp.Visible = true;
+                excelApp.ActiveWindow.Caption = "Room Charges File"; }
+        }
+
+        private void fileSaveMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -64,14 +64,20 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.clientIdMTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.fileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileSaveMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileOpenMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.errorStrip.SuspendLayout();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(16, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(19, 37);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(133, 123);
@@ -102,7 +108,7 @@
             // 
             this.exitButton.BackColor = System.Drawing.SystemColors.MenuBar;
             this.exitButton.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton.Location = new System.Drawing.Point(685, 619);
+            this.exitButton.Location = new System.Drawing.Point(688, 646);
             this.exitButton.Margin = new System.Windows.Forms.Padding(4);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(287, 81);
@@ -115,7 +121,7 @@
             // 
             this.clearButton.BackColor = System.Drawing.SystemColors.MenuBar;
             this.clearButton.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearButton.Location = new System.Drawing.Point(355, 619);
+            this.clearButton.Location = new System.Drawing.Point(358, 646);
             this.clearButton.Margin = new System.Windows.Forms.Padding(4);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(287, 81);
@@ -128,7 +134,7 @@
             // 
             this.calculateButton.BackColor = System.Drawing.SystemColors.MenuBar;
             this.calculateButton.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calculateButton.Location = new System.Drawing.Point(16, 619);
+            this.calculateButton.Location = new System.Drawing.Point(19, 646);
             this.calculateButton.Margin = new System.Windows.Forms.Padding(4);
             this.calculateButton.Name = "calculateButton";
             this.calculateButton.Size = new System.Drawing.Size(287, 81);
@@ -142,7 +148,7 @@
             this.miscTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.miscTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.miscTextBox.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.miscTextBox.Location = new System.Drawing.Point(765, 283);
+            this.miscTextBox.Location = new System.Drawing.Point(768, 310);
             this.miscTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.miscTextBox.Name = "miscTextBox";
             this.miscTextBox.Size = new System.Drawing.Size(195, 27);
@@ -154,7 +160,7 @@
             this.telephoneTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.telephoneTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.telephoneTextBox.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.telephoneTextBox.Location = new System.Drawing.Point(765, 237);
+            this.telephoneTextBox.Location = new System.Drawing.Point(768, 264);
             this.telephoneTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.telephoneTextBox.Name = "telephoneTextBox";
             this.telephoneTextBox.Size = new System.Drawing.Size(195, 27);
@@ -166,7 +172,7 @@
             this.nightlyChargeTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.nightlyChargeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nightlyChargeTextBox.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.nightlyChargeTextBox.Location = new System.Drawing.Point(236, 239);
+            this.nightlyChargeTextBox.Location = new System.Drawing.Point(239, 266);
             this.nightlyChargeTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nightlyChargeTextBox.Name = "nightlyChargeTextBox";
             this.nightlyChargeTextBox.Size = new System.Drawing.Size(195, 27);
@@ -178,7 +184,7 @@
             this.roomServiceTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.roomServiceTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.roomServiceTextBox.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.roomServiceTextBox.Location = new System.Drawing.Point(765, 189);
+            this.roomServiceTextBox.Location = new System.Drawing.Point(768, 216);
             this.roomServiceTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.roomServiceTextBox.Name = "roomServiceTextBox";
             this.roomServiceTextBox.Size = new System.Drawing.Size(195, 27);
@@ -190,7 +196,7 @@
             this.nightsTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.nightsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nightsTextBox.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.nightsTextBox.Location = new System.Drawing.Point(236, 191);
+            this.nightsTextBox.Location = new System.Drawing.Point(239, 218);
             this.nightsTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nightsTextBox.Name = "nightsTextBox";
             this.nightsTextBox.Size = new System.Drawing.Size(195, 27);
@@ -200,7 +206,7 @@
             // label17
             // 
             this.label17.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(231, 535);
+            this.label17.Location = new System.Drawing.Point(234, 562);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(263, 36);
@@ -211,7 +217,7 @@
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(231, 445);
+            this.label10.Location = new System.Drawing.Point(234, 472);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(263, 36);
@@ -224,7 +230,7 @@
             this.taxLabel.BackColor = System.Drawing.SystemColors.ControlLight;
             this.taxLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.taxLabel.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.taxLabel.Location = new System.Drawing.Point(501, 490);
+            this.taxLabel.Location = new System.Drawing.Point(504, 517);
             this.taxLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.taxLabel.Name = "taxLabel";
             this.taxLabel.Size = new System.Drawing.Size(193, 35);
@@ -236,7 +242,7 @@
             this.additionalChargesLabel.BackColor = System.Drawing.SystemColors.ControlLight;
             this.additionalChargesLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.additionalChargesLabel.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.additionalChargesLabel.Location = new System.Drawing.Point(501, 400);
+            this.additionalChargesLabel.Location = new System.Drawing.Point(504, 427);
             this.additionalChargesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.additionalChargesLabel.Name = "additionalChargesLabel";
             this.additionalChargesLabel.Size = new System.Drawing.Size(193, 35);
@@ -248,7 +254,7 @@
             this.timeLabel.BackColor = System.Drawing.SystemColors.ControlLight;
             this.timeLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.timeLabel.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timeLabel.Location = new System.Drawing.Point(779, 118);
+            this.timeLabel.Location = new System.Drawing.Point(782, 145);
             this.timeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.timeLabel.Name = "timeLabel";
             this.timeLabel.Size = new System.Drawing.Size(193, 35);
@@ -258,7 +264,7 @@
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(553, 279);
+            this.label7.Location = new System.Drawing.Point(556, 306);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(204, 36);
@@ -271,7 +277,7 @@
             this.totalLabel.BackColor = System.Drawing.SystemColors.ControlLight;
             this.totalLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.totalLabel.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalLabel.Location = new System.Drawing.Point(501, 535);
+            this.totalLabel.Location = new System.Drawing.Point(504, 562);
             this.totalLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.totalLabel.Name = "totalLabel";
             this.totalLabel.Size = new System.Drawing.Size(193, 35);
@@ -283,7 +289,7 @@
             this.subtotalLabel.BackColor = System.Drawing.SystemColors.ControlLight;
             this.subtotalLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.subtotalLabel.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subtotalLabel.Location = new System.Drawing.Point(501, 445);
+            this.subtotalLabel.Location = new System.Drawing.Point(504, 472);
             this.subtotalLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.subtotalLabel.Name = "subtotalLabel";
             this.subtotalLabel.Size = new System.Drawing.Size(193, 35);
@@ -293,7 +299,7 @@
             // label14
             // 
             this.label14.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(231, 490);
+            this.label14.Location = new System.Drawing.Point(234, 517);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(263, 36);
@@ -306,7 +312,7 @@
             this.roomChargesLabel.BackColor = System.Drawing.SystemColors.ControlLight;
             this.roomChargesLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.roomChargesLabel.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roomChargesLabel.Location = new System.Drawing.Point(501, 353);
+            this.roomChargesLabel.Location = new System.Drawing.Point(504, 380);
             this.roomChargesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.roomChargesLabel.Name = "roomChargesLabel";
             this.roomChargesLabel.Size = new System.Drawing.Size(193, 35);
@@ -316,7 +322,7 @@
             // label9
             // 
             this.label9.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(231, 400);
+            this.label9.Location = new System.Drawing.Point(234, 427);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(263, 36);
@@ -329,7 +335,7 @@
             this.dateLabel.BackColor = System.Drawing.SystemColors.ControlLight;
             this.dateLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dateLabel.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateLabel.Location = new System.Drawing.Point(779, 71);
+            this.dateLabel.Location = new System.Drawing.Point(782, 98);
             this.dateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(193, 35);
@@ -339,7 +345,7 @@
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(553, 234);
+            this.label6.Location = new System.Drawing.Point(556, 261);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(204, 36);
@@ -350,7 +356,7 @@
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(235, 352);
+            this.label8.Location = new System.Drawing.Point(238, 379);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(259, 36);
@@ -361,7 +367,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(567, 118);
+            this.label2.Location = new System.Drawing.Point(570, 145);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(204, 36);
@@ -372,7 +378,7 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(553, 186);
+            this.label5.Location = new System.Drawing.Point(556, 213);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(204, 36);
@@ -383,7 +389,7 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(24, 235);
+            this.label4.Location = new System.Drawing.Point(27, 262);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(204, 36);
@@ -394,7 +400,7 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 187);
+            this.label3.Location = new System.Drawing.Point(27, 214);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(204, 36);
@@ -405,7 +411,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(567, 71);
+            this.label1.Location = new System.Drawing.Point(570, 98);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(204, 36);
@@ -416,7 +422,7 @@
             // nameLabel1
             // 
             this.nameLabel1.Font = new System.Drawing.Font("MS Gothic", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLabel1.Location = new System.Drawing.Point(157, 6);
+            this.nameLabel1.Location = new System.Drawing.Point(160, 33);
             this.nameLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nameLabel1.Name = "nameLabel1";
             this.nameLabel1.Size = new System.Drawing.Size(815, 52);
@@ -428,7 +434,7 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(501, 170);
+            this.groupBox1.Location = new System.Drawing.Point(504, 197);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -441,7 +447,7 @@
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(16, 332);
+            this.groupBox3.Location = new System.Drawing.Point(19, 359);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
@@ -454,7 +460,7 @@
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Font = new System.Drawing.Font("MS Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(16, 170);
+            this.groupBox2.Location = new System.Drawing.Point(19, 197);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
@@ -466,7 +472,7 @@
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(157, 70);
+            this.label11.Location = new System.Drawing.Point(160, 97);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(136, 36);
@@ -479,11 +485,49 @@
             this.clientIdMTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.clientIdMTextBox.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.clientIdMTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.clientIdMTextBox.Location = new System.Drawing.Point(300, 75);
+            this.clientIdMTextBox.Location = new System.Drawing.Point(303, 102);
             this.clientIdMTextBox.Mask = ">LL-0000";
             this.clientIdMTextBox.Name = "clientIdMTextBox";
             this.clientIdMTextBox.Size = new System.Drawing.Size(193, 27);
             this.clientIdMTextBox.TabIndex = 0;
+            // 
+            // menuStrip
+            // 
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileMenuItem});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(988, 28);
+            this.menuStrip.TabIndex = 46;
+            this.menuStrip.Text = "menuStrip1";
+            // 
+            // fileMenuItem
+            // 
+            this.fileMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileSaveMenuItem,
+            this.fileOpenMenuItem});
+            this.fileMenuItem.Name = "fileMenuItem";
+            this.fileMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileMenuItem.Text = "File";
+            // 
+            // fileSaveMenuItem
+            // 
+            this.fileSaveMenuItem.Name = "fileSaveMenuItem";
+            this.fileSaveMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.fileSaveMenuItem.Text = "Save";
+            this.fileSaveMenuItem.Click += new System.EventHandler(this.fileSaveMenuItem_Click);
+            // 
+            // fileOpenMenuItem
+            // 
+            this.fileOpenMenuItem.Name = "fileOpenMenuItem";
+            this.fileOpenMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.fileOpenMenuItem.Text = "Open";
+            this.fileOpenMenuItem.Click += new System.EventHandler(this.fileOpenMenuItem_Click);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
             // 
             // RoomChargesForm
             // 
@@ -494,6 +538,7 @@
             this.Controls.Add(this.clientIdMTextBox);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.errorStrip);
+            this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.calculateButton);
@@ -526,6 +571,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
+            this.MainMenuStrip = this.menuStrip;
             this.Name = "RoomChargesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Room Costs Application";
@@ -533,6 +579,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.errorStrip.ResumeLayout(false);
             this.errorStrip.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -576,5 +624,10 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.MaskedTextBox clientIdMTextBox;
+        private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.ToolStripMenuItem fileMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileSaveMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileOpenMenuItem;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
