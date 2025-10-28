@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
+// GUNAVAN D HUAMANI MELGAR | 802-22-2972
 namespace HotelApp_Asig5
 {
     public partial class DirectionForm : Form

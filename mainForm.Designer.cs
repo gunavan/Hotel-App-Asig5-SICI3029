@@ -97,7 +97,7 @@
             this.label1.Text = "Mayaguez\r\nResort and Casino\r\nMain Form";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // mainForm
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -108,7 +108,7 @@
             this.Controls.Add(this.roomChargesFormButton);
             this.Controls.Add(this.directionsFormButton);
             this.Controls.Add(this.label1);
-            this.Name = "mainForm";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mayaguez Resort and Casino Application";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

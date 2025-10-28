@@ -1,5 +1,4 @@
 ﻿using System;
-
 using System.Windows.Forms;
 // GUNAVAN D HUAMANI MELGAR | 802-22-2972
 namespace HotelApp_Asig5
