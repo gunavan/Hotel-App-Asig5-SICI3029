@@ -6,13 +6,11 @@ using System.CodeDom;
 // GUNAVAN D HUAMANI MELGAR | 802-22-2972
 namespace HotelApp_Asig5
 {
-
     public partial class RoomChargesForm : Form
     {
         // variables
         string clientId = "", date = DateTime.Now.ToString("dd/MM/yyyy"), hour = DateTime.Now.ToShortTimeString().ToString();
-        decimal roomCharge = 0, additionalCharges = 0, subtotal = 0, total = 0, taxTotal = 0,
-                nightCharges = 0, roomService = 0, telephone = 0, misc = 0;
+        decimal roomCharge = 0, additionalCharges = 0, subtotal = 0, total = 0, taxTotal = 0, nightCharges = 0, roomService = 0, telephone = 0, misc = 0;
         int nights = 0;
         const decimal TAX = 0.1105m;
         bool notEmpty = true;
@@ -95,6 +93,7 @@ namespace HotelApp_Asig5
                 total = taxTotal + subtotal;
                 // output
                 Output();
+                // saves transaction
                 SaveTransaction(); }
         }
 
@@ -130,9 +129,12 @@ namespace HotelApp_Asig5
             roomChargesErrorLabel.Text = "";
         }
         // saves to file
-        private void SaveTransaction()
+        private void SaveTransaction(bool popUp = true)
         {
-            result = MessageBox.Show("Do you want to save this transaction to file?", "Save to File", MessageBoxButtons.YesNo);
+            // to show message box (does not show when called from menu)
+            if (popUp) { result = MessageBox.Show("Do you want to save this transaction to file?", "Save to File", MessageBoxButtons.YesNo); }
+            else { result = DialogResult.Yes; }
+                
             // yes/no message box
             if (result == DialogResult.Yes) {
                 string line = date + "," + hour + "," + clientId + "," + roomCharge + "," + additionalCharges + "," + subtotal + "," + taxTotal + "," + total;
@@ -157,7 +159,7 @@ namespace HotelApp_Asig5
                                 writeFile.Close(); }
                             // if transaction found in file
                             else {
-                                MessageBox.Show("This transaction has been found in the file.\nDuplicate transaction will not be saved", "Transaction in File Already!");
+                                MessageBox.Show("This transaction has been found in file.\nDuplicate transaction will not be saved", "Transaction in File Already!");
                                 return; } } }
                     // folder did not exist
                     else { MessageBox.Show("Directory C:\\record does not exist. File not saved."); } }
@@ -170,11 +172,11 @@ namespace HotelApp_Asig5
                 string[] lineParts = line.Split(',');
                 string[] allLines = File.ReadAllLines(@"C:\record\RoomChargesFile.txt");
                 foreach (string lineInFile in allLines) { 
-                    string[] lineInFileParts = lineInFile.Split(',');
+                    string[] lineInAllLines = lineInFile.Split(',');
                     // if matches date, hour and clientID
-                    if (lineParts[0] == lineInFileParts[0] && 
-                        lineParts[1] == lineInFileParts[1] && 
-                        lineParts[2] == lineInFileParts[2]) { return true; } }
+                    if (lineParts[0] == lineInAllLines[0] && 
+                        lineParts[1] == lineInAllLines[1] && 
+                        lineParts[2] == lineInAllLines[2]) { return true; } }
                 // if nothing found
                 return false; }
             catch (Exception ex) { MessageBox.Show(ex.Message); return true; }
@@ -207,14 +209,13 @@ namespace HotelApp_Asig5
         // saves valid transaction
         private void fileSaveMenuItem_Click(object sender, EventArgs e)
         {
-            // ASK IF SHE WANTS IN FILE SAVE TO PROMPT MESSAGE BOX
             bool valid = true;
 
             if (!clientIdMTextBox.MaskFull || roomCharge == 0 || total == 0) {
                 valid = false;
-                MessageBox.Show("No valid data in transaction to save.\nPlease calculate a transaction first.", "Error"); }
-
-            if (valid) { SaveTransaction(); }
+                MessageBox.Show("No valid data in transaction to save.\nPlease calculate a transaction first.", "Error in Saving"); }
+            // doesnt prompt the message box
+            if (valid) { SaveTransaction(false); }
         }
     }
 }
