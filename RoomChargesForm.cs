@@ -10,14 +10,12 @@ namespace HotelApp_Asig5
     public partial class RoomChargesForm : Form
     {
         // variables
-        string clientId = "", date = DateTime.Now.ToString("dd/MM/yyyy"), hour = DateTime.Now.ToShortTimeString().ToString(),
-               message = "Do you want to save this transaction to file?", caption = "Save to File";
+        string clientId = "", date = DateTime.Now.ToString("dd/MM/yyyy"), hour = DateTime.Now.ToShortTimeString().ToString();
         decimal roomCharge = 0, additionalCharges = 0, subtotal = 0, total = 0, taxTotal = 0,
                 nightCharges = 0, roomService = 0, telephone = 0, misc = 0;
         int nights = 0;
         const decimal TAX = 0.1105m;
         bool notEmpty = true;
-        MessageBoxButtons buttons = MessageBoxButtons.YesNo;
         DialogResult result;
         public RoomChargesForm()
         {
@@ -25,7 +23,7 @@ namespace HotelApp_Asig5
             
             dateLabel.Text = date;
             timeLabel.Text = hour;
-
+            // accept and cancel buttons
             this.AcceptButton = calculateButton;
             this.CancelButton = exitButton;
         }
@@ -92,14 +90,11 @@ namespace HotelApp_Asig5
                 // math
                 roomCharge = nights * nightCharges;
                 additionalCharges = roomService + telephone + misc;
-
                 subtotal = roomCharge + additionalCharges;
                 taxTotal = subtotal * TAX;
-
                 total = taxTotal + subtotal;
                 // output
                 Output();
-
                 SaveTransaction(); }
         }
 
@@ -137,39 +132,44 @@ namespace HotelApp_Asig5
         // saves to file
         private void SaveTransaction()
         {
-            // vars
-            result = MessageBox.Show(message, caption, buttons);
+            result = MessageBox.Show("Do you want to save this transaction to file?", "Save to File", MessageBoxButtons.YesNo);
+            // yes/no message box
             if (result == DialogResult.Yes) {
                 string line = date + "," + hour + "," + clientId + "," + roomCharge + "," + additionalCharges + "," + subtotal + "," + taxTotal + "," + total;
                 try {
                     StreamWriter writeFile;
+                    // checks if folder exists
                     if (Directory.Exists(@"C:\record")) {
-                        if (!(File.Exists(@"C:\record\RoomChargeFile.txt"))) {
-                            writeFile = File.CreateText(@"C:\record\RoomChargeFile.txt");
+                        // if folder exists, checks that .txt file exists and creates it if not
+                        if (!(File.Exists(@"C:\record\RoomChargesFile.txt"))) {
+                            writeFile = File.CreateText(@"C:\record\RoomChargesFile.txt");
                             writeFile.WriteLine("DATE, HOUR, CLIENTID, ROOMCHARGES, ADDITIONALCHARGES, SUB TOTAL, TAX TOTAL, TOTAL ROOM CHARGES");
                             writeFile.WriteLine(line);
-                            MessageBox.Show("File Created in: C:\\record\\RoomChargeFile.txt");
+                            MessageBox.Show("File Created in: C:\\record\\RoomChargesFile.txt");
                             writeFile.Close(); }
+                        // if .txt file exists, appends to it
                         else {
+                            // checks if transaction is already in file, false means its a new one
                             if (!FindIt(line)) {
-                                writeFile = File.AppendText(@"C:\record\RoomChargeFile.txt");
+                                writeFile = File.AppendText(@"C:\record\RoomChargesFile.txt");
                                 MessageBox.Show("Transaction SAVED in File: C:\\record\\RoomChargesFile.txt");
                                 writeFile.WriteLine(line);
                                 writeFile.Close(); }
+                            // if transaction found in file
                             else {
-                                MessageBox.Show("The transaction has been found in the file.\nTransaction will not be made or saved");
+                                MessageBox.Show("This transaction has been found in the file.\nDuplicate transaction will not be saved", "Transaction in File Already!");
                                 return; } } }
+                    // folder did not exist
                     else { MessageBox.Show("Directory C:\\record does not exist. File not saved."); } }
                 catch (Exception ex) { MessageBox.Show(ex.Message); } }
-            else { Clear(); }
         }
         // returns true if line was found in file
         private bool FindIt(string line)
         {
             StreamReader readFile;
-            string cutUpLine = line.Substring(0, 27); // date, hour, id length
+            string cutUpLine = line.Substring(0, 27); // cuts string to date, hour, id length
             try {
-                readFile = File.OpenText(@"C:\record\RoomChargeFile.txt");
+                readFile = File.OpenText(@"C:\record\RoomChargesFile.txt");
                 string lineInFile;
                 while (!readFile.EndOfStream) {
                     lineInFile = readFile.ReadLine();
@@ -188,7 +188,7 @@ namespace HotelApp_Asig5
         {
             this.Close();
         }
-
+        // opens to excel
         private void fileOpenMenuItem_Click(object sender, EventArgs e)
         {
             openFileDialog.InitialDirectory = @"C:\record";
@@ -204,10 +204,17 @@ namespace HotelApp_Asig5
                 excelApp.Visible = true;
                 excelApp.ActiveWindow.Caption = "Room Charges File"; }
         }
-
+        // saves valid transaction
         private void fileSaveMenuItem_Click(object sender, EventArgs e)
         {
-            
+            bool valid = true;
+
+            if (!clientIdMTextBox.MaskFull || roomCharge == 0 || total == 0) {
+                valid = false;
+                MessageBox.Show("No valid data in transaction to save.\nPlease calculate a transaction first.", "Error");
+            }
+
+            if (valid) { SaveTransaction(); }
         }
     }
 }
