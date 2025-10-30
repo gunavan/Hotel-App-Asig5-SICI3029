@@ -166,16 +166,16 @@ namespace HotelApp_Asig5
         // returns true if line was found in file
         private bool FindIt(string line)
         {
-            StreamReader readFile;
-            string cutUpLine = line.Substring(0, 27); // cuts string to date, hour, id length
             try {
-                readFile = File.OpenText(@"C:\record\RoomChargesFile.txt");
-                string lineInFile;
-                while (!readFile.EndOfStream) {
-                    lineInFile = readFile.ReadLine();
-                    lineInFile = lineInFile.Substring(0, 27);
-                    if (lineInFile == cutUpLine) { return true; } }
-                readFile.Close();
+                string[] lineParts = line.Split(',');
+                string[] allLines = File.ReadAllLines(@"C:\record\RoomChargesFile.txt");
+                foreach (string lineInFile in allLines) { 
+                    string[] lineInFileParts = lineInFile.Split(',');
+                    // if matches date, hour and clientID
+                    if (lineParts[0] == lineInFileParts[0] && 
+                        lineParts[1] == lineInFileParts[1] && 
+                        lineParts[2] == lineInFileParts[2]) { return true; } }
+                // if nothing found
                 return false; }
             catch (Exception ex) { MessageBox.Show(ex.Message); return true; }
         }
@@ -207,12 +207,12 @@ namespace HotelApp_Asig5
         // saves valid transaction
         private void fileSaveMenuItem_Click(object sender, EventArgs e)
         {
+            // ASK IF SHE WANTS IN FILE SAVE TO PROMPT MESSAGE BOX
             bool valid = true;
 
             if (!clientIdMTextBox.MaskFull || roomCharge == 0 || total == 0) {
                 valid = false;
-                MessageBox.Show("No valid data in transaction to save.\nPlease calculate a transaction first.", "Error");
-            }
+                MessageBox.Show("No valid data in transaction to save.\nPlease calculate a transaction first.", "Error"); }
 
             if (valid) { SaveTransaction(); }
         }
