@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorStrip = new System.Windows.Forms.StatusStrip();
             this.roomChargesErrorLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.exitButton = new System.Windows.Forms.Button();
@@ -69,21 +68,9 @@
             this.fileSaveMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileOpenMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.errorStrip.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(19, 37);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 123);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 45;
-            this.pictureBox1.TabStop = false;
             // 
             // errorStrip
             // 
@@ -422,10 +409,10 @@
             // nameLabel1
             // 
             this.nameLabel1.Font = new System.Drawing.Font("MS Gothic", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLabel1.Location = new System.Drawing.Point(160, 33);
+            this.nameLabel1.Location = new System.Drawing.Point(13, 33);
             this.nameLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nameLabel1.Name = "nameLabel1";
-            this.nameLabel1.Size = new System.Drawing.Size(815, 52);
+            this.nameLabel1.Size = new System.Drawing.Size(962, 52);
             this.nameLabel1.TabIndex = 14;
             this.nameLabel1.Text = "Mayaguez Resort and Casino";
             this.nameLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -472,7 +459,7 @@
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(160, 97);
+            this.label11.Location = new System.Drawing.Point(23, 95);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(136, 36);
@@ -485,7 +472,7 @@
             this.clientIdMTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.clientIdMTextBox.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.clientIdMTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.clientIdMTextBox.Location = new System.Drawing.Point(303, 102);
+            this.clientIdMTextBox.Location = new System.Drawing.Point(166, 100);
             this.clientIdMTextBox.Mask = ">LL-0000";
             this.clientIdMTextBox.Name = "clientIdMTextBox";
             this.clientIdMTextBox.Size = new System.Drawing.Size(193, 27);
@@ -514,14 +501,14 @@
             // fileSaveMenuItem
             // 
             this.fileSaveMenuItem.Name = "fileSaveMenuItem";
-            this.fileSaveMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.fileSaveMenuItem.Size = new System.Drawing.Size(128, 26);
             this.fileSaveMenuItem.Text = "Save";
             this.fileSaveMenuItem.Click += new System.EventHandler(this.fileSaveMenuItem_Click);
             // 
             // fileOpenMenuItem
             // 
             this.fileOpenMenuItem.Name = "fileOpenMenuItem";
-            this.fileOpenMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.fileOpenMenuItem.Size = new System.Drawing.Size(128, 26);
             this.fileOpenMenuItem.Text = "Open";
             this.fileOpenMenuItem.Click += new System.EventHandler(this.fileOpenMenuItem_Click);
             // 
@@ -536,7 +523,6 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(988, 758);
             this.Controls.Add(this.clientIdMTextBox);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.errorStrip);
             this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.exitButton);
@@ -576,7 +562,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Room Costs Application";
             this.TopMost = true;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.errorStrip.ResumeLayout(false);
             this.errorStrip.PerformLayout();
             this.menuStrip.ResumeLayout(false);
@@ -587,8 +572,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.StatusStrip errorStrip;
         private System.Windows.Forms.ToolStripStatusLabel roomChargesErrorLabel;
         private System.Windows.Forms.Button exitButton;

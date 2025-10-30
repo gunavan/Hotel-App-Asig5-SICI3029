@@ -29,24 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DirectionForm));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.exitButton = new System.Windows.Forms.Button();
             this.directionsButton = new System.Windows.Forms.Button();
             this.directionsLabel = new System.Windows.Forms.Label();
             this.nameLabel1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(26, 22);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 123);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
             // 
             // exitButton
             // 
@@ -89,10 +76,10 @@
             // nameLabel1
             // 
             this.nameLabel1.Font = new System.Drawing.Font("MS Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLabel1.Location = new System.Drawing.Point(195, 22);
+            this.nameLabel1.Location = new System.Drawing.Point(37, 22);
             this.nameLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nameLabel1.Name = "nameLabel1";
-            this.nameLabel1.Size = new System.Drawing.Size(660, 123);
+            this.nameLabel1.Size = new System.Drawing.Size(925, 123);
             this.nameLabel1.TabIndex = 8;
             this.nameLabel1.Text = "Directions to the Mayaguez Resort  and Casino";
             this.nameLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -103,7 +90,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(988, 758);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.directionsButton);
             this.Controls.Add(this.directionsLabel);
@@ -112,14 +98,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Hotel App Directions";
             this.TopMost = true;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button directionsButton;
         private System.Windows.Forms.Label directionsLabel;
